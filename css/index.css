@@ -1,98 +1,148 @@
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Mukta:wght@400;700&display=swap');
 
 :root {
-    --main-color: green;
-    --accent-color:white;
+    --main-color: black;
+    --accent-color: white;
     font-family: 'Mukta', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
     max-width: 980px;
-    margin: auto;
+    margin:auto;
 }
 
-header .logo {
+.header-nav .logo {
     font-family: 'Krona One', sans-serif;
     font-size: 3.5rem;
-    text-align: centr;
+    text-align: center;
 }
 
-header .menu-items {
-    flex: 1;
+.header-nav .menu-items {
     justify-content: space-around;
+    flex: 1;
+    display: none;
 }
 
-
-header .menu-items a {
+.header-nav .menu-items a {
     display: block;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--main-color);
-    border: 1px solid transparent;
     padding: 5px;
+    border: 1px solid transparent;
 }
- 
-header .menu-items a:hover {
-     border: 1px solid var(--main-color); 
-    
+
+.header-nav .menu-items a:hover {
+    border: 1px solid var(--main-color);
+}
+
+
+/* Burger menu */
+.burger-icon {
+    font-size: 2rem;
+}
+
+.burger-icon:hover {
+    cursor: pointer;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+.header-nav input:checked ~ .menu-items {
+    display: block;
 }
 
 @media (min-width: 769px) {
 
-    header .header-nav {
-       display: flex;  
+    .burger-icon {
+        display: none;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    #burger-checkbox ~ .menu-items {
+        display: flex;
+    }
 }
 
-    header .menu-items a {
-      display: flex;
-}
-
-}
-
-header .header-baner {
-    background-image: url(../lake.img);
+.header-banner {
+    background-image: url(../img/nature.svg);
     background-position: center;
-    background-size: cover;
-    min-height: 450; 
+    background-size: 100px 200px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 
-header .header-banner h1 {
+.header-banner h1 {
+    font-size: 3,5rem;
     color: var(--accent-color);
-    font-family: 'Krona One', sans-serif;
-    font-size: 3.5rem;
 }
 
+.available-tours img {
+    width: auto;
+}
 
+.available-tours .tour-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (min-width: 500px) {
+    .tour-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+        grid-gap: 5px;
+    }    
+}
+
+@media (min-width: 660px) {
+    .tour-list {
+        grid-template-columns: 1fr 1fr 1fr;    
+    }    
+}
+
+@media (min-width: 980px) {
+    .tour-list {
+        grid-template-columns: repeat(4, 1fr);    
+    }    
+}
 
 /* Controls */
 
 .button {
     padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     color: #ffffff;
     text-align: center;
     transition: all 0.7s;
     background-color: transparent;
-}    
+}
 
 .button:hover {
-    color: #000000 ;
-    background-color: #ffffff;
+    color: #000000;
+    background-color: #FFFFFF;
     cursor: pointer;
 }
 
-.card-button {
-    border-color: #ffffff;
-    color: white;
+.tour-button {
+    border-color: black;
+    color: black;
 }
 
+.smaller-image {
+    width: 100px;
+}
 
 
 
